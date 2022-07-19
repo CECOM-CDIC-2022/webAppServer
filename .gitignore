@@ -1,2 +1,1 @@
-uwsgi.ini
-uwsgi/
+__pycache__/
