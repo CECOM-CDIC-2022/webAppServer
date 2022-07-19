@@ -2,24 +2,24 @@ from flask import Flask,request,jsonify
 
 flaskApp = Flask(__name__)
 
-@flaskApp.route('/soundclf', methods = ['POST'])
+@flaskApp.route("/soundclf", methods=["POST"])
 def soundclf():
     try:
-        return 'F21VDT'       
+        return "F21VDT"       
     except Exception as e:
         print(e)
-        return 'error'
+        return "error"
 
-@flaskApp.route('/soundval', methods = ['POST'])
+@flaskApp.route("/soundval", methods=["POST"])
 def soundval():
     try:
-        return 'True'
+        return "True"
     except Exception as e:
         print(e)
-        return 'error'
+        return "error"
 
-@flaskApp.route('/test', methods=['POST'])
+@flaskApp.route("/test", methods=["POST"])
 def test():
     return "ZipGaGoSipDa"
 
-flaskApp.run(host='0.0.0.0', debug=True, port= 80)
+flaskApp.run(host="0.0.0.0", debug=True, port= 80)
