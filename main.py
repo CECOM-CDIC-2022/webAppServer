@@ -4,7 +4,8 @@ flaskApp = Flask(__name__)
 
 @flaskApp.route("/sound", methods=["POST"])
 def sound():
-    return "WA_SANS"
+    soundData = request.data["sound"]
+    return soundData
 
 @flaskApp.route("/test", methods=["POST"])
 def test():
