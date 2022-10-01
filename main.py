@@ -12,6 +12,10 @@ def sound():
     # resultData = requests.post(resultURL, soundData).text
     resultData = "noise,noise,noise,noise"
 
+    dataFile = open("SOUND_DATA", "r")
+    tempData = eval(resultFile.readline())
+    dataFile.close()
+
     if resultData.find("ON") != -1:
         pass
     elif (resultData.find("OFF") != -1) or (resultData.find("DONE") != -1):
