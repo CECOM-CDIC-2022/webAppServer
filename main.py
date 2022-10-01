@@ -7,9 +7,9 @@ flaskApp = Flask(__name__)
 @flaskApp.route("/sound", methods=["POST"])
 def sound():
     soundData = request.get_json()["sound"]
-
+    
     resultURL = os.environ["MODEL_SERVER_ADDR"]
-    resultData = requests.post(resultURL, soundData)
+    resultData = requests.post(resultURL, soundData).text
 
     resultFile = open("SOUND_DATA", "w")
     resultFile.write(resultData)
