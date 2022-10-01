@@ -9,7 +9,12 @@ def sound():
 
 @flaskApp.route("/getSoundResult", methods=["GET"])
 def getSoundResult():
-    return "WA_SANS"
+    resultFile = open("SOUND_DATA", "r")
+
+    resultData = resultFile.readline()
+
+    resultFile.close()
+    return resultData
 
 @flaskApp.route("/test", methods=["POST"])
 def test():
