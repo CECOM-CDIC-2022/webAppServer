@@ -9,7 +9,7 @@ def sound():
     soundData = request.get_json()["sound"]
 
     resultURL = os.environ["MODEL_SERVER_ADDR"]
-    resultData = requsts.post(resultURL, soundData)
+    resultData = requests.post(resultURL, soundData)
 
     resultFile = open("SOUND_DATA", "w")
     resultFile.write(resultData)
