@@ -21,32 +21,32 @@ def sound():
         if resultData.find("lg") != -1:
             if (resultData.find("drum") != -1) or (resultData.find("washer") != -1):
                 # LG Washer ON
-                pass
+                resultData["LG_WASHER"] = True
             else:
                 # LG Air Purifier ON
-                pass
+                resultData["LG_AIRPURIFIER"] = True
         else:
             if (resultData.find("bubble") != -1) or (resultData.find("washer") != -1):
                 # Samsung Washer ON
-                pass
+                resultData["SAMSUNG_WASHER"] = True
             else:
                 # Samsung Air Conditioner ON
-                pass
+                resultData["SAMSUNG_AIRCONDITIONER"] = True
     elif (resultData.find("off") != -1) or (resultData.find("done") != -1):
         if resultData.find("lg") != -1:
             if (resultData.find("drum") != -1) or (resultData.find("washer") != -1):
-                # LG Washer OFF
-                pass
+                # LG Washer ON
+                resultData["LG_WASHER"] = False
             else:
-                # LG Air Purifier OFF
-                pass
+                # LG Air Purifier ON
+                resultData["LG_AIRPURIFIER"] = False
         else:
             if (resultData.find("bubble") != -1) or (resultData.find("washer") != -1):
-                # Samsung Washer OFF
-                pass
+                # Samsung Washer ON
+                resultData["SAMSUNG_WASHER"] = False
             else:
-                # Samsung Air Conditioner OFF
-                pass
+                # Samsung Air Conditioner ON
+                resultData["SAMSUNG_AIRCONDITIONER"] = False
 
     resultFile = open("SOUND_DATA", "w")
     resultFile.write(resultData)
