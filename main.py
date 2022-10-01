@@ -10,7 +10,7 @@ def sound():
     
     resultURL = os.environ["MODEL_SERVER_ADDR"]
     # resultData = requests.post(resultURL, soundData).text
-    resultData = "noise"
+    resultData = "noise,noise,noise,noise"
 
     resultFile = open("SOUND_DATA", "w")
     resultFile.write(resultData)
