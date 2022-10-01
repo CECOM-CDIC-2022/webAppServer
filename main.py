@@ -7,8 +7,11 @@ flaskApp = Flask(__name__)
 def sound():
     soundData = request.get_json()["sound"]
 
+    resultURL = os.environ["MODEL_SERVER_ADDR"]
+    resultData = requsts.post(resultURL, soundData)
+
     resultFile = open("SOUND_DATA", "w")
-    resultFile.write(soundData)
+    resultFile.write(resultData)
     resultFile.close()
 
     return soundData
