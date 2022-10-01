@@ -19,17 +19,34 @@ def sound():
     resultData = resultData.lower()
     if resultData.find("on") != -1:
         if resultData.find("lg") != -1:
-            if resultData.find("lg") != -1:
+            if (resultData.find("drum") != -1) or (resultData.find("washer") != -1):
+                # LG Washer ON
                 pass
             else:
+                # LG Air Purifier ON
                 pass
         else:
-            pass
+            if (resultData.find("bubble") != -1) or (resultData.find("washer") != -1):
+                # Samsung Washer ON
+                pass
+            else:
+                # Samsung Air Conditioner ON
+                pass
     elif (resultData.find("off") != -1) or (resultData.find("done") != -1):
         if resultData.find("lg") != -1:
-            pass
+            if (resultData.find("drum") != -1) or (resultData.find("washer") != -1):
+                # LG Washer OFF
+                pass
+            else:
+                # LG Air Purifier OFF
+                pass
         else:
-            pass
+            if (resultData.find("bubble") != -1) or (resultData.find("washer") != -1):
+                # Samsung Washer OFF
+                pass
+            else:
+                # Samsung Air Conditioner OFF
+                pass
 
     resultFile = open("SOUND_DATA", "w")
     resultFile.write(resultData)
