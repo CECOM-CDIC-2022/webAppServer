@@ -12,6 +12,11 @@ def sound():
     # resultData = requests.post(resultURL, soundData).text
     resultData = "noise,noise,noise,noise"
 
+    if resultData.find("ON") != -1:
+        pass
+    elif (resultData.find("OFF") != -1) or (resultData.find("DONE") != -1):
+        pass
+
     resultFile = open("SOUND_DATA", "w")
     resultFile.write(resultData)
     resultFile.close()
@@ -20,6 +25,8 @@ def sound():
 
 @flaskApp.route("/getSoundResult", methods=["GET"])
 def getSoundResult():
+    targetDevice = request.args.get("devID")
+
     resultFile = open("SOUND_DATA", "r")
 
     resultData = resultFile.readline()
