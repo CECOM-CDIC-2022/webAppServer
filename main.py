@@ -49,7 +49,7 @@ def sound():
                 resultData["SAMSUNG_AIRCONDITIONER"] = False
 
     resultFile = open("SOUND_DATA", "w")
-    resultFile.write(resultData)
+    resultFile.write(str(resultData))
     resultFile.close()
 
     return soundData
@@ -59,11 +59,13 @@ def getSoundResult():
     targetDevice = request.args.get("devID")
 
     resultFile = open("SOUND_DATA", "r")
-
-    resultData = resultFile.readline()
-
+    resultData = eval(resultFile.readline())
     resultFile.close()
-    return resultData
+
+    if targetDevice in resultData:
+        return resultData[targetDevice]
+
+    return False
 
 @flaskApp.route("/test", methods=["POST"])
 def test():
