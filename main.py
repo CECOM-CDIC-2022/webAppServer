@@ -4,7 +4,7 @@ flaskApp = Flask(__name__)
 
 @flaskApp.route("/sound", methods=["POST"])
 def sound():
-    soundData = request.data["sound"]
+    soundData = request.get_json()["sound"]
     return soundData
 
 @flaskApp.route("/test", methods=["POST"])
