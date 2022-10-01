@@ -1,10 +1,11 @@
 from flask import Flask,request,jsonify
-
+from librosa import resample
 flaskApp = Flask(__name__)
 
 @flaskApp.route("/sound", methods=["POST"])
 def sound():
     soundData = request.get_json()["sound"]
+    soundData = resample(soundData, orig_sr=len(soundData)/4, target_sr=22050)
     return soundData
 
 @flaskApp.route("/getSoundResult", methods=["GET"])
