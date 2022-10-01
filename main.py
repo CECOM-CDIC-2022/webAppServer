@@ -3,7 +3,7 @@ from flask import Flask,request,jsonify
 flaskApp = Flask(__name__)
 
 @flaskApp.route("/sound", methods=["POST"])
-def test():
+def sound():
     return "WA_SANS"
 
 @flaskApp.route("/test", methods=["POST"])
