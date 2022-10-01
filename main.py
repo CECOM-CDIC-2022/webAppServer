@@ -16,10 +16,20 @@ def sound():
     tempData = eval(resultFile.readline())
     dataFile.close()
 
-    if resultData.find("ON") != -1:
-        pass
-    elif (resultData.find("OFF") != -1) or (resultData.find("DONE") != -1):
-        pass
+    resultData = resultData.lower()
+    if resultData.find("on") != -1:
+        if resultData.find("lg") != -1:
+            if resultData.find("lg") != -1:
+                pass
+            else:
+                pass
+        else:
+            pass
+    elif (resultData.find("off") != -1) or (resultData.find("done") != -1):
+        if resultData.find("lg") != -1:
+            pass
+        else:
+            pass
 
     resultFile = open("SOUND_DATA", "w")
     resultFile.write(resultData)
