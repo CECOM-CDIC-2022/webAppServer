@@ -63,9 +63,9 @@ def getSoundResult():
     resultFile.close()
 
     if targetDevice in resultData:
-        return resultData[targetDevice]
+        return str(resultData[targetDevice])
 
-    return False
+    return str(False)
 
 @flaskApp.route("/test", methods=["POST"])
 def test():
