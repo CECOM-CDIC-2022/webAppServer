@@ -21,35 +21,35 @@ def sound():
         if resultData.find("lg") != -1:
             if (resultData.find("drum") != -1) or (resultData.find("washer") != -1):
                 # LG Washer ON
-                resultData["LG_WASHER"] = True
+                tempData["LG_WASHER"] = True
             else:
                 # LG Air Purifier ON
-                resultData["LG_AIRPURIFIER"] = True
+                tempData["LG_AIRPURIFIER"] = True
         else:
             if (resultData.find("bubble") != -1) or (resultData.find("washer") != -1):
                 # Samsung Washer ON
-                resultData["SAMSUNG_WASHER"] = True
+                tempData["SAMSUNG_WASHER"] = True
             else:
                 # Samsung Air Conditioner ON
-                resultData["SAMSUNG_AIRCONDITIONER"] = True
+                tempData["SAMSUNG_AIRCONDITIONER"] = True
     elif (resultData.find("off") != -1) or (resultData.find("done") != -1):
         if resultData.find("lg") != -1:
             if (resultData.find("drum") != -1) or (resultData.find("washer") != -1):
                 # LG Washer ON
-                resultData["LG_WASHER"] = False
+                tempData["LG_WASHER"] = False
             else:
                 # LG Air Purifier ON
-                resultData["LG_AIRPURIFIER"] = False
+                tempData["LG_AIRPURIFIER"] = False
         else:
             if (resultData.find("bubble") != -1) or (resultData.find("washer") != -1):
                 # Samsung Washer ON
-                resultData["SAMSUNG_WASHER"] = False
+                tempData["SAMSUNG_WASHER"] = False
             else:
                 # Samsung Air Conditioner ON
-                resultData["SAMSUNG_AIRCONDITIONER"] = False
+                tempData["SAMSUNG_AIRCONDITIONER"] = False
 
     resultFile = open("SOUND_DATA", "w")
-    resultFile.write(str(resultData))
+    resultFile.write(str(tempData))
     resultFile.close()
 
     return soundData
