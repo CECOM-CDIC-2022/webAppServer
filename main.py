@@ -52,7 +52,7 @@ def sound():
     resultFile.write(str(tempData))
     resultFile.close()
 
-    return soundData
+    return str(tempData)
 
 @flaskApp.route("/getSoundResult", methods=["GET"])
 def getSoundResult():
