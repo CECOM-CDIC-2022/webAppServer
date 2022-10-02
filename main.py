@@ -9,8 +9,8 @@ def sound():
     soundData = request.get_json()["sound"]
     
     resultURL = os.environ["MODEL_SERVER_ADDR"]
-    # resultData = requests.post(resultURL, soundData).text
-    resultData = "noise,noise,noise,noise"
+    resultData = requests.post(resultURL, soundData).text
+    # resultData = "noise,noise,noise,noise"
 
     dataFile = open("SOUND_DATA", "r")
     tempData = eval(resultFile.readline())
