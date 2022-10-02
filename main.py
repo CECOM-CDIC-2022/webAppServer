@@ -17,6 +17,9 @@ def sound():
     dataFile.close()
 
     resultData = resultData.lower()
+
+    print(resultData)
+
     if resultData.find("on") != -1:
         if resultData.find("lg") != -1:
             if (resultData.find("drum") != -1) or (resultData.find("washer") != -1):
