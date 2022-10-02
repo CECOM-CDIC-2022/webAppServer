@@ -13,7 +13,7 @@ def sound():
     # resultData = "noise,noise,noise,noise"
 
     dataFile = open("SOUND_DATA", "r")
-    tempData = eval(resultFile.readline())
+    tempData = eval(dataFile.readline())
     dataFile.close()
 
     resultData = resultData.lower()
